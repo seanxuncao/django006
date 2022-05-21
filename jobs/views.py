@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import Job
 
 # Create your views here.
 def home(request):
-    jobs="job1 summary"
-    return render(request, "home.html", {"jobs": jobs})
+    jobs=Job.objects.all
+    return render(request, "jobs/home.html", {"jobs": jobs})
