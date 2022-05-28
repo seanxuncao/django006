@@ -30,7 +30,22 @@
 
 <main>
 
-{{ blogs }}
+  <div class="container">
+    <h1 class="text-center p-5">Welcome to Sean's Blog</h1>
+    <p></p>
+    <h2>Latest Post</h2>
+    <hr>
+
+    {% for blog in blogs %}
+    <a href=""><h2>{{ blog.title }}</h2></a>
+    {{ blog.pub_date_pretty }}
+    <br>
+    <img class="img-fluid" src="{{ blog.image.url }}" width="400" height="400">
+    <br>
+    <p>{{ blog.summary }}</p>
+    {% endfor %}
+
+  </div>
 
 </main>
 
